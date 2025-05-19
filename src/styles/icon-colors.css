@@ -15,6 +15,6 @@
     stroke: var(--icon-color-light);
 }
 
-.dark-theme .icon {
+S .dark-theme .icon {
     stroke: var(--icon-color-dark);
 }

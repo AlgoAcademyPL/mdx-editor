@@ -141,6 +141,7 @@ export const SimpleToolbar = () => {
 
     <MDXEditor
     markdown={"dkoqwdpoqw"}
+    contentEditableClassName='prose'
     plugins={[
       toolbarPlugin({ 
         toolbarContents: () => (

@@ -69,25 +69,39 @@ const RichTextEditor: React.FC = () => {
         <Child key={index} />
       ))}
       <RenderRecursiveWrappers wrappers={editorWrappers}>
-        <div className={classNames(styles.rootContentEditableWrapper, 'mdxeditor-root-contenteditable')}>
+        <section style={{
+          border: '1px solid #334155',
+          borderRadius: '12px',
+          padding: '12px',
+          backgroundColor: '#1E293B',
+          color: '#ffffff',
+          marginTop: '6px'
+        }}> 
+        <div className={classNames( contentEditableClassName, 'mdxeditor-root-contenteditable')}>
           <RichTextPlugin
+          
             contentEditable={
               <div ref={onRef}>
                 <ContentEditable
-                  className={classNames(styles.contentEditable, contentEditableClassName)}
+                style={{
+                  color: '#ffffff',
+                  border: 'none',
+                }}
+                  className={classNames(contentEditableClassName)}
                   ariaLabel={t('contentArea.editableMarkdown', 'editable markdown')}
                   spellCheck={spellCheck}
                 />
               </div>
             }
             placeholder={
-              <div className={classNames(styles.contentEditable, styles.placeholder, contentEditableClassName)}>
-                <p>{placeholder}</p>
+              <div className={classNames( contentEditableClassName)}>
+                <p className={classNames(  contentEditableClassName)} >{placeholder}</p>
               </div>
             }
             ErrorBoundary={LexicalErrorBoundary}
           />
         </div>
+        </section>
       </RenderRecursiveWrappers>
       {composerChildren.map((Child: any, index: React.Key) => (
         <Child key={index} />
@@ -349,11 +363,11 @@ export const MDXEditor = React.forwardRef<MDXEditorMethods, MDXEditorProps>((pro
         ...(props.plugins ?? [])
       ]}
     >
-      <EditorRootElement className={props.className} overlayContainer={props.overlayContainer}>
+      <EditorRootElement  className={props.className} overlayContainer={props.overlayContainer}>
         <LexicalProvider>
-          <RichTextEditor />
+          <RichTextEditor     />
         </LexicalProvider>
-      </EditorRootElement>
+      </EditorRootElement >
       <Methods mdxRef={ref} />
     </RealmWithPlugins>
   )
