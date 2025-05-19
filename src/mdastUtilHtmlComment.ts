@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // typed version of https://github.com/slorber/remark-comment/blob/slorber/multiline-comment-bug/index.js
 //
 import type { Handle, Transform } from 'mdast-util-from-markdown'

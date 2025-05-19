@@ -26,14 +26,16 @@ import {
   DiffSourceToggleWrapper,
   InsertImage,
   ListsToggle,
-  KitchenSinkToolbar
+  KitchenSinkToolbar,
+  StrikeThroughSupSubToggles,
+  CodeToggle
 } from '..'
 import { ALL_PLUGINS, YoutubeDirectiveDescriptor, virtuosoSampleSandpackConfig } from './_boilerplate'
 import kitchenSinkMarkdown from './assets/kitchen-sink.md?raw'
 import './dark-editor.css'
 import { basicDark } from 'cm6-theme-basic-dark'
 import type { Story } from '@ladle/react'
-
+import {BoldIcon} from '@heroicons/react/24/solid'
 export const Basics = () => {
   return <MDXEditor markdown={kitchenSinkMarkdown} plugins={ALL_PLUGINS} />
 }
@@ -136,33 +138,43 @@ export const ConditionalToolbar = () => {
 
 export const SimpleToolbar = () => {
   return (
+    <section> 
+
     <MDXEditor
-      markdown={'hello world'}
-      plugins={[
-        toolbarPlugin({
-          toolbarContents: () => (
-            <>
-              <UndoRedo />
-              <Separator />
-            </>
-          )
-        }),
-        listsPlugin(),
-        quotePlugin(),
-        headingsPlugin(),
-        linkPlugin(),
-        linkDialogPlugin(),
-        imagePlugin(),
-        tablePlugin(),
-        thematicBreakPlugin(),
-        frontmatterPlugin(),
-        codeBlockPlugin({ defaultCodeBlockLanguage: 'txt' }),
-        sandpackPlugin({ sandpackConfig: virtuosoSampleSandpackConfig }),
-        codeMirrorPlugin({ codeBlockLanguages: { js: 'JavaScript', css: 'CSS', txt: 'text' } }),
-        directivesPlugin({ directiveDescriptors: [YoutubeDirectiveDescriptor, AdmonitionDirectiveDescriptor] }),
-        diffSourcePlugin({ viewMode: 'rich-text', diffMarkdown: 'boo' }),
-        markdownShortcutPlugin()
-      ]}
-    />
+    markdown={"dkoqwdpoqw"}
+    plugins={[
+      toolbarPlugin({ 
+        toolbarContents: () => (
+          <>
+            <UndoRedo />
+            <BoldItalicUnderlineToggles />
+            <StrikeThroughSupSubToggles />
+            <ListsToggle />
+            <CodeToggle />
+            <CreateLink />
+            <InsertImage />            
+            
+          </>
+        )
+      }),
+      listsPlugin(),
+      quotePlugin(),
+      headingsPlugin(),
+      linkPlugin(),
+      linkDialogPlugin(),
+      imagePlugin(),
+      tablePlugin(),
+      thematicBreakPlugin(),
+      frontmatterPlugin(),
+      codeBlockPlugin({ defaultCodeBlockLanguage: 'txt' }),
+      codeMirrorPlugin({ codeBlockLanguages: { js: 'JavaScript', css: 'CSS', txt: 'text' } }),
+      diffSourcePlugin({ viewMode: 'rich-text', diffMarkdown: 'boo' }),
+      markdownShortcutPlugin()
+    ]}
+    ref={null}
+   
+  />
+  </section>
   )
 }
+  

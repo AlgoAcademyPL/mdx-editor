@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useCellValue, useCellValues, usePublisher, useRealm } from '@mdxeditor/gurx'
 import React from 'react'
 import { RealmPlugin, RealmWithPlugins } from './RealmWithPlugins'
@@ -64,7 +65,7 @@ const RichTextEditor: React.FC = () => {
     )
   return (
     <>
-      {topAreaChildren.map((Child, index) => (
+      {topAreaChildren.map((Child: any, index: React.Key) => (
         <Child key={index} />
       ))}
       <RenderRecursiveWrappers wrappers={editorWrappers}>
@@ -88,10 +89,10 @@ const RichTextEditor: React.FC = () => {
           />
         </div>
       </RenderRecursiveWrappers>
-      {composerChildren.map((Child, index) => (
+      {composerChildren.map((Child: any, index: React.Key) => (
         <Child key={index} />
       ))}
-      {bottomAreaChildren.map((Child, index) => (
+      {bottomAreaChildren.map((Child: any, index: React.Key) => (
         <Child key={index} />
       ))}
     </>
