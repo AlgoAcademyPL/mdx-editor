@@ -43,7 +43,7 @@ function addTooltipToChildren<C extends React.ComponentType<{ children: React.Re
 export const Root: React.FC<{ readOnly: boolean; children: React.ReactNode; className?: string }> = ({ readOnly, children, className }) => {
   return (
     <RadixToolbar.Root
-      className={classNames('mdxeditor-toolbar', styles.toolbarRoot, { [styles.readOnlyToolbarRoot]: readOnly }, className)}
+      className={classNames('mdxeditor-toolbar', className)}
       {...(readOnly ? { tabIndex: -1 } : {})}
     >
       {children}

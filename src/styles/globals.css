@@ -6,8 +6,10 @@
 @import url('@radix-ui/colors/cyan.css');
 @import url('@radix-ui/colors/amber.css');
 @import url('@radix-ui/colors/red.css');
+@import './icon-colors.css';
 
 .mdxeditor {
+
   /** Code mirror */
   & .cm-editor {
     --sp-font-mono: var(--font-mono);

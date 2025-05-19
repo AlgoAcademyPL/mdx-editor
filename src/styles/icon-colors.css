@@ -1,0 +1,20 @@
+/* Icon colors for light mode */
+:root {
+    --icon-color-light: var(--slate-12);
+    --icon-color-dark: var(--slate-1);
+}
+
+/* Icon colors for dark mode */
+.dark-theme {
+    --icon-color-light: var(--slate-1);
+    --icon-color-dark: var(--slate-12);
+}
+
+/* Base icon styles */
+.icon {
+    stroke: var(--icon-color-light);
+}
+
+.dark-theme .icon {
+    stroke: var(--icon-color-dark);
+}

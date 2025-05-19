@@ -18,25 +18,21 @@ export const defaultSvgIcons = {
     </svg>
   ),
   format_bold: (
-    <svg width="16" height="16"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+    <svg width="16" height="16"className='stroke-red-500'  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
   <path stroke-linejoin="round" d="M6.75 3.744h-.753v8.25h7.125a4.125 4.125 0 0 0 0-8.25H6.75Zm0 0v.38m0 16.122h6.747a4.5 4.5 0 0 0 0-9.001h-7.5v9h.753Zm0 0v-.37m0-15.751h6a3.75 3.75 0 1 1 0 7.5h-6m0-7.5v7.5m0 0v8.25m0-8.25h6.375a4.125 4.125 0 0 1 0 8.25H6.75m.747-15.38h4.875a3.375 3.375 0 0 1 0 6.75H7.497v-6.75Zm0 7.5h5.25a3.75 3.75 0 0 1 0 7.5h-5.25v-7.5Z" />
 </svg>
   ),
   format_italic: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M5.39404 18.625V16.8173H9.21129L12.4518 7.18275H8.63454V5.375H17.7883V7.18275H14.2785L11.0383 16.8173H14.5478V18.625H5.39404Z"
-        fill="currentColor"
-      />
-    </svg>
+    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" >
+  <path stroke-linecap="round" stroke-linejoin="round" d="M5.248 20.246H9.05m0 0h3.696m-3.696 0 5.893-16.502m0 0h-3.697m3.697 0h3.803" />
+</svg>
+
   ),
   format_underlined: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M5.34619 22.125V20.625H18.6537V22.125H5.34619ZM11.9999 18.5287C10.4448 18.5287 9.23102 18.0566 8.35869 17.1125C7.48619 16.1683 7.04994 14.9032 7.04994 13.3172V5.41345H8.90369V13.4095C8.90369 14.4198 9.17228 15.2295 9.70944 15.8385C10.2466 16.4475 11.0101 16.752 11.9999 16.752C12.9898 16.752 13.7533 16.4475 14.2904 15.8385C14.8276 15.2295 15.0962 14.4198 15.0962 13.4095V5.41345H16.9499V13.3172C16.9499 14.9032 16.5137 16.1683 15.6412 17.1125C14.7689 18.0566 13.5551 18.5287 11.9999 18.5287Z"
-        fill="currentColor"
-      />
-    </svg>
+    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M17.995 3.744v7.5a6 6 0 1 1-12 0v-7.5m-2.25 16.502h16.5" />
+  </svg>
+  
   ),
   code: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

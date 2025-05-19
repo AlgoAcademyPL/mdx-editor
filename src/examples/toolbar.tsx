@@ -35,7 +35,6 @@ import kitchenSinkMarkdown from './assets/kitchen-sink.md?raw'
 import './dark-editor.css'
 import { basicDark } from 'cm6-theme-basic-dark'
 import type { Story } from '@ladle/react'
-import {BoldIcon} from '@heroicons/react/24/solid'
 export const Basics = () => {
   return <MDXEditor markdown={kitchenSinkMarkdown} plugins={ALL_PLUGINS} />
 }
@@ -145,7 +144,23 @@ export const SimpleToolbar = () => {
     plugins={[
       toolbarPlugin({ 
         toolbarContents: () => (
-          <>
+          <div style={{
+            backgroundColor: '#0F172A',
+            borderColor: '#334155',  
+            color: 'white',
+            flexDirection: 'row',
+            display: 'flex',
+            borderRadius: '12px',
+            width: 'fit-content',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            paddingTop: '8px',
+            paddingBottom: '8px',
+            paddingLeft: '16px',
+            paddingRight: '16px',
+          }}>
             <UndoRedo />
             <BoldItalicUnderlineToggles />
             <StrikeThroughSupSubToggles />
@@ -154,7 +169,7 @@ export const SimpleToolbar = () => {
             <CreateLink />
             <InsertImage />            
             
-          </>
+          </div>
         )
       }),
       listsPlugin(),
