@@ -1,12 +1,18 @@
 import React from 'react'
 import {
+  BoldItalicUnderlineToggles,
   CodeBlockEditorDescriptor,
+  CodeToggle,
+  CreateLink,
   DiffSourceToggleWrapper,
   GenericJsxEditor,
   InsertFrontmatter,
+  InsertImage,
   JsxComponentDescriptor,
+  ListsToggle,
   MDXEditor,
   MDXEditorMethods,
+  StrikeThroughSupSubToggles,
   UndoRedo,
   codeBlockPlugin,
   codeMirrorPlugin,
@@ -37,7 +43,10 @@ const helloMarkdown = `Hello <u>world am **here**</u> more <u>under</u> line. So
 export function Bare() {
   const ref = React.useRef<MDXEditorMethods>(null)
   return (
-    <>
+    <main style={{
+     backgroundColor: '#0F172A',
+     padding: '16px',
+    }}>
       <button onClick={() => ref.current?.setMarkdown('new markdown')}>Set new markdown</button>
       <button
         onClick={() => {
@@ -46,8 +55,47 @@ export function Bare() {
       >
         Get markdown
       </button>
-      <MDXEditor autoFocus={true} ref={ref} markdown={helloMarkdown} onChange={console.log} />
-    </>
+      <div style={{
+        height: '6px',
+        width: '100%',
+      }}/>
+      <MDXEditor autoFocus={true} ref={ref} 
+      markdown={helloMarkdown} 
+      onChange={console.log} 
+      plugins={[
+        toolbarPlugin({ 
+        toolbarContents: () => (
+          <div style={{
+            backgroundColor: '#0F172A',
+            borderColor: '#334155',  
+            border: 'solid 1px #334155',
+            color: 'white',
+            flexDirection: 'row',
+            display: 'flex',
+            borderRadius: '12px',
+            width: 'fit-content',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            // paddingTop: '8px',
+            // paddingBottom: '8px',
+            paddingLeft: '16px',
+            paddingRight: '16px',
+          }}>
+            <UndoRedo />
+            <BoldItalicUnderlineToggles />
+            <StrikeThroughSupSubToggles />
+            <ListsToggle />
+            <CodeToggle />
+            <CreateLink />
+            <InsertImage />            
+          </div>
+        )
+      }),     
+      ]}
+      />
+    </main>
   )
 }
 

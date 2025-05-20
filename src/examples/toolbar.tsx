@@ -169,7 +169,6 @@ export const SimpleToolbar = () => {
             <CodeToggle />
             <CreateLink />
             <InsertImage />            
-            
           </div>
         )
       }),
