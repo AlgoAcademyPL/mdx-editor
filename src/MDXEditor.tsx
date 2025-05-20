@@ -64,10 +64,43 @@ const RichTextEditor: React.FC = () => {
       bottomAreaChildren$
     )
   return (
-    <>
-      {topAreaChildren.map((Child: any, index: React.Key) => (
-        <Child key={index} />
+    <section className='mdxeditor-our-component' style={{
+      position: 'relative',
+    }}>
+    <div style={{
+        backgroundColor: 'rgb(0, 0, 255)   ',
+        width: '100%',
+        height: '6px',
+      }}></div>
+      {/* Now we are brfore the toolbar */}
+
+<section className='toolbar-our-component' style={{
+  position: 'absolute',
+  bottom: '6px',
+  // top: '10px',
+  width: '100%',
+  height: 'fit-content',
+  display: 'flex',
+  justifyContent: 'center',
+  
+}}>
+      {
+      topAreaChildren.map((Child: any, index: React.Key) => (
+        <Child key={index}  style={{
+          position: 'absolute',
+          bottom: '20px',
+          left: '20px',
+
+        }}/>
       ))}
+      </section>
+ <div style={{
+        backgroundColor: 'rgb(0, 0, 255)   ',
+        width: '100%',
+        height: '6px',
+      }}></div>
+{/* Now we are after the toolbar */}
+
       <RenderRecursiveWrappers wrappers={editorWrappers}>
         <section style={{
           border: '1px solid #334155',
@@ -77,6 +110,7 @@ const RichTextEditor: React.FC = () => {
           color: '#ffffff',
           marginTop: '6px'
         }}> 
+        
         <div  
         style={{
           color: '#ffffff',
@@ -115,7 +149,7 @@ const RichTextEditor: React.FC = () => {
       {bottomAreaChildren.map((Child: any, index: React.Key) => (
         <Child key={index} />
       ))}
-    </>
+    </section>
   )
 }
 
@@ -369,11 +403,29 @@ export const MDXEditor = React.forwardRef<MDXEditorMethods, MDXEditorProps>((pro
         ...(props.plugins ?? [])
       ]}
     >
+      <div style={{
+        backgroundColor: 'rgba(255, 255, 255)',
+        width: '100%',
+        height: '6px',
+      }}></div>
+
       <EditorRootElement  className={props.className} overlayContainer={props.overlayContainer}>
+      <div style={{
+        backgroundColor: 'rgb(255, 0, 0)  ',
+        width: '100%',
+        height: '6px',
+      }}></div>
         <LexicalProvider>
+        <div style={{
+        backgroundColor: 'rgb(60, 179, 113)   ',
+        width: '100%',
+        height: '6px',
+      }}></div>
+
           <RichTextEditor     />
         </LexicalProvider>
       </EditorRootElement >
+      
       <Methods mdxRef={ref} />
     </RealmWithPlugins>
   )
