@@ -77,18 +77,24 @@ const RichTextEditor: React.FC = () => {
           color: '#ffffff',
           marginTop: '6px'
         }}> 
-        <div className={classNames( contentEditableClassName, 'mdxeditor-root-contenteditable')}>
-          <RichTextPlugin
+        <div  
+        style={{
+          color: '#ffffff',
+          borderStyle: 'none',
+              }} 
+        className={classNames( styles.rootContentEditableWrapper, 'mdxeditor-root-contenteditable')}>
           
+          <RichTextPlugin
+         
             contentEditable={
               <div ref={onRef}>
                 <ContentEditable
                 style={{
                   color: '#ffffff',
-                  border: 'none',
+                  borderStyle: 'none',
                 }}
-                  className={classNames(contentEditableClassName)}
-                  ariaLabel={t('contentArea.editableMarkdown', 'editable markdown')}
+                className={classNames(styles.contentEditable, contentEditableClassName)}
+                ariaLabel={t('contentArea.editableMarkdown', 'editable markdown')}
                   spellCheck={spellCheck}
                 />
               </div>
